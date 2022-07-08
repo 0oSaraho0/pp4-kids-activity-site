@@ -10,6 +10,7 @@ class Idea(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user_ideas")
     updated_on = models.DateTimeField(auto_now=True)
     activity_location = models.CharField(max_length=200, unique=False)
+    web_address = models.URLField(max_length=200, default="www.sample.com")
     featured_image = CloudinaryField('image', default='placeholder')
     user_image = models.ImageField(null=True, blank=True)
     content = models.TextField(blank=True)
