@@ -4,6 +4,7 @@ from cloudinary.models import CloudinaryField
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
+
 class Idea(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
@@ -29,7 +30,7 @@ class Idea(models.Model):
 
 class Comment(models.Model):
     idea = models.ForeignKey(
-        Idea, on_delete=models.CASCADE,related_name="comments")
+        Idea, on_delete=models.CASCADE, related_name="comments")
     name = models.CharField(max_length=80)
     email = models.EmailField()
     body = models.TextField()
