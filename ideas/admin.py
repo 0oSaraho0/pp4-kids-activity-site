@@ -13,7 +13,7 @@ class IdeaAdmin(SummernoteModelAdmin):
     summernote_fields = ('content')
 
 
-@admin.regirster(Comment)
+@admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
 
     list_display = ('name', 'body', 'post', 'created_on')
