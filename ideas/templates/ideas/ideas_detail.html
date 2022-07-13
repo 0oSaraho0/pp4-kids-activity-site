@@ -31,7 +31,30 @@
                 </p>
                 <div class="row">
                     <div class="col-1">
-                        <strong class="text-secondary"><i class="far fa-heart"></i> {{ idea.number_of_likes }} </strong>
+                        {% if user.is_authenticated %}
+                        <form class="d-inline" action="{% url 'idea_like' idea.slug %}" method="POST">
+                            {% csrf_token %}
+
+                            {% if liked %}
+
+                            <button type="submit" name="idea_id" value="{{idea.slug}}" class="btn-like">
+                                <i class="fas fa-heart"></i>
+                            </button>
+
+                            {% else %}
+
+                            <button type="submit" name="idea_id" value="{{idea.slug}}" class="btn-like">
+                                <i class="far fa-heart"></i>
+
+                            {% endif %}
+                        </form>
+                            {% else %}
+
+                            <span class="text-secondary"><i class="far fa-heart"></i></span>
+
+                        {% endif %}
+
+                            <span class="text-secondary">{{ idea.number_of_likes }}</span>  
                     </div>
                     <div class="col-1">
                         {% with comments.count as total_comments %}
