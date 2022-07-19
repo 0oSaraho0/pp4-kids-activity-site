@@ -1,22 +1,22 @@
 from django.shortcuts import render, get_object_or_404, reverse
-from django.views import generic, View
+from django.views.generic import CreateView, DetailView, ListView
 from django.http import HttpResponseRedirect
+from django.contrib import messages
 from .models import Idea
-from .forms import CommentForm
+from .forms import IdeaForm, CommentForm
 
 
-class IdeaList(generic.ListView):
+class IdeaList(ListView):
     model = Idea
     queryset = Idea.objects.filter(status=1).order_by('title')
     template_name = 'ideas/ideas.html'
     paginate_by = 6
 
 
-class IdeaDetail(View):
-
-    def get(self, request, slug, *args, **kwargs):
+class IdeaDetail(DetailView):
+    def get(self, request, pk, *args, **kwargs):
         queryset = Idea.objects.filter(status=1)
-        idea = get_object_or_404(queryset, slug=slug)
+        idea = get_object_or_404(queryset, pk=pk)
         comments = idea.comments.order_by("-created_on")
         liked = False
         if idea.likes.filter(id=self.request.user.id).exists():
@@ -29,14 +29,13 @@ class IdeaDetail(View):
                 "idea": idea,
                 "comments": comments,
                 "liked": liked,
-                "comment_form": CommentForm()
-                
+                "comment_form": CommentForm()               
             },
         )
 
-    def post(self, request, slug, *args, **kwargs):
+    def post(self, request, pk, *args, **kwargs):
         queryset = Idea.objects.filter(status=1)
-        idea = get_object_or_404(queryset, slug=slug)
+        idea = get_object_or_404(queryset, pk=pk)
         comments = idea.comments.order_by("-created_on")
         liked = False
         if idea.likes.filter(id=self.request.user.id).exists():
@@ -67,15 +66,29 @@ class IdeaDetail(View):
         )
 
 
-class IdeaLike(View):
+class IdeaLike(CreateView):
 
-    def post(self, request, slug):
-        idea = get_object_or_404(Idea, slug=slug)
+    def post(self, request, pk):
+        idea = get_object_or_404(Idea, pk=pk)
 
         if idea.likes.filter(id=request.user.id).exists():
             idea.likes.remove(request.user)
         else:
             idea.likes.add(request.user)
 
-        return HttpResponseRedirect(reverse('idea_detail', args=[slug]))
+        return HttpResponseRedirect(self.request.META.get('HTTP_REFERER'))
+
+
+class IdeaCreate(CreateView):
+
+    form_class = IdeaForm
+    template_name = 'ideas/create_idea.html'
+    success_url = "/ideas/ideas/"
+    model = Idea
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        messages.success(self.request, 'Idea created successfully')
+        return super(IdeaCreate, self).form_valid(form)
+
 
