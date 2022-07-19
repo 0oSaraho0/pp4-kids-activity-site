@@ -6,9 +6,9 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 
 class Idea(models.Model):
-    title = models.CharField(max_length=200, unique=True)
-    slug = models.SlugField(max_length=200, unique=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user_ideas")
+    title = models.CharField(max_length=200)
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="user_ideas")
     updated_on = models.DateTimeField(auto_now=True)
     activity_location = models.CharField(max_length=200, unique=False)
     web_address = models.URLField(max_length=200, default="www.sample.com")
@@ -41,7 +41,7 @@ class Comment(models.Model):
         ordering = ["created_on"]
 
     def __str__(self):
-        return f"Comment {self.body} by {self.name}" 
+        return f"Comment {self.body} by {self.name}"
 
 
 # Create your models here.
