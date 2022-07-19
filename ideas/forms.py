@@ -3,12 +3,14 @@ from django import forms
 
 
 class CommentForm(forms.ModelForm):
+    """ A form to make a comment """
     class Meta:
         model = Comment
         fields = ('body',)
 
 
 class IdeaForm(forms.ModelForm):
+    """ A form to create an idea """
     class Meta:
         model = Idea
         fields = (
