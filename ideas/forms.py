@@ -12,17 +12,11 @@ class IdeaForm(forms.ModelForm):
     class Meta:
         model = Idea
         fields = (
-            'title',
-            'featured_image',
+            'activity_name',
+            'picture',
             'activity_location',
-            'web_address',
-            'content',
+            'age_range',
+            'cost',
+            'activity_website',
+            'review',
         )
-
-        lables = {
-            'title': 'Activity Name',
-            'featured_image': 'Picture',
-            'activity_location': 'Location',
-            'web_address': 'Web Link',
-            'content': 'Review',
-        }

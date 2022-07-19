@@ -6,9 +6,9 @@ from django_summernote.admin import SummernoteModelAdmin
 @admin.register(Idea)
 class IdeaAdmin(SummernoteModelAdmin):
 
-    list_display = ('title', 'status', 'updated_on')
-    search_fields = ['title', 'content']
-    list_filter = ('status', 'updated_on')
+    list_display = ('activity_name', 'updated_on')
+    search_fields = ['activity_name', 'content']
+    list_filter = ('updated_on',)
     summernote_fields = ('content')
 
 

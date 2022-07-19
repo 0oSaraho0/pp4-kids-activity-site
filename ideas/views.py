@@ -8,14 +8,14 @@ from .forms import IdeaForm, CommentForm
 
 class IdeaList(ListView):
     model = Idea
-    queryset = Idea.objects.filter(status=1).order_by('title')
+    queryset = Idea.objects.order_by('activity_name')
     template_name = 'ideas/ideas.html'
     paginate_by = 6
 
 
 class IdeaDetail(DetailView):
     def get(self, request, pk, *args, **kwargs):
-        queryset = Idea.objects.filter(status=1)
+        queryset = Idea.objects
         idea = get_object_or_404(queryset, pk=pk)
         comments = idea.comments.order_by("-created_on")
         liked = False
@@ -34,7 +34,7 @@ class IdeaDetail(DetailView):
         )
 
     def post(self, request, pk, *args, **kwargs):
-        queryset = Idea.objects.filter(status=1)
+        queryset = Idea.objects
         idea = get_object_or_404(queryset, pk=pk)
         comments = idea.comments.order_by("-created_on")
         liked = False
