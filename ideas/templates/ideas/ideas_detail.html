@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
 {% load crispy_forms_tags %}
 
@@ -6,16 +7,27 @@
     <div class="container">
         <div class="row g-0">
             <div class="col-md-6">
-                <h1 class="idea-title"> {{ idea.title }}</h1>
+                <h1 class="idea-title"> {{ idea.activity_name }}</h1>
                 <p class="idea-subtitle">{{ idea.author }} | {{ idea.updated_on }}</p>
             </div>
+            
+            <!-- Delete Idea -->
+            <div>
+                
+                <span>
+                    <a href="{% url 'idea_delete' idea.pk %}" class="delete large-icon" aria-label="Click to delete idea">
+                        <i class="fa-solid fa-trash-can">delete</i>
+                    </a>
+                </span>
+            </div>
+                
             <div class="d-none d-md-block col-md-6">
-                {% if "placeholder" in idea.featured_image.url %}
+                {% if "placeholder" in idea.picture.url %}
                 <img class="card-img-top"
                     src="https://res.cloudinary.com/doakyrejw/image/upload/v1657274377/outdoor-games-diy-tictactoe-1583532166.jpg_znxynv.jpg"
                     alt="picture of outdoor tic tac toe on grass" width="100%">
                 {% else %}
-                <img src="{{ post.featured_image.url }}" width="100%">
+                <img src="{{ post.picture.url }}" width="100%">
                 {% endif %}
             </div>
         </div>
