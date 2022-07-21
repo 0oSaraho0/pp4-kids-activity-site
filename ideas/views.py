@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views.generic import CreateView, DetailView, ListView, DeleteView
-from django.contrib.auth.mixins import UserPassesTestMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from .models import Idea
@@ -97,13 +97,14 @@ class IdeaCreate(CreateView):
         return super(IdeaCreate, self).form_valid(form)
 
 
-class IdeaDelete(UserPassesTestMixin, DeleteView):
+class IdeaDelete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     """ A view to delete an idea """
     model = Idea
     success_url = "/ideas/ideas/"
+    template_name = "ideas/idea_delete_conf.html"
 
     def test_func(self):
-        return self.request.author == self.get_object().user
+        return self.request.user == self.get_object().author
 
 
 
