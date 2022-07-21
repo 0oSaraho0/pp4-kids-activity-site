@@ -3,7 +3,6 @@
 
 {% block content %}
 
-is this working?
 
 <div class="container-fluid">
     <div class="row">
@@ -15,23 +14,22 @@ is this working?
                     <div class="col-md-4">
                         <div class="card mb-4">
                             <div class="card-body">
-                                {% if "placeholder" in idea.featured_image.url %}
+                                {% if "placeholder" in idea.picture.url %}
                                 <img class="card-img-top" 
                                 src="https://res.cloudinary.com/doakyrejw/image/upload/v1657274377/outdoor-games-diy-tictactoe-1583532166.jpg_znxynv.jpg" 
                                 alt="picture of outdoor tic tac toe on grass">
                                 {% else %}
-                                <img class="card-img-top" src="{{ idea.featured_image.url }}" alt="">
+                                <img class="card-img-top" src="{{ idea.picture.url }}" alt="">
                                 {% endif %}
                                 <div>
                                     <p class="author">Author: {{ idea.author }}</p>
                                 </div>
-                            <a href="{% url 'idea_detail' idea.pk idea.title %}" class="idea-link">
-                                <h2 class="card-title">{{ idea.title }}</h2>
+                            <a href="{% url 'idea_detail' idea.pk idea.activity_name %}" class="idea-link">
+                                <h2 class="card-title">{{ idea.activity_name }}</h2>
                             </a>
                             <hr>
                             <p class="card-text text-muted h6">{{ idea.updated_on}}</p><i
                                     class="far fa-heart">{{ idea.number_of_likes }}</i>
-
 
                                 
                             </div>
