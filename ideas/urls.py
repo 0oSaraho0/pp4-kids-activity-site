@@ -7,4 +7,5 @@ urlpatterns = [
     path('delete/<slug:pk>', views.IdeaDelete.as_view(), name='idea_delete'),
     path('like/<slug:pk>', views.IdeaLike.as_view(), name='idea_like'),
     path('create/', views.IdeaCreate.as_view(), name='create'),
+    path('edit/<slug:pk>', views.IdeaEdit.as_view(), name='idea_edit')
 ]

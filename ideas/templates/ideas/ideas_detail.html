@@ -16,7 +16,12 @@
                 
                 <span>
                     <a href="{% url 'idea_delete' idea.pk %}" class="delete large-icon" aria-label="Click to delete idea">
-                        <i class="fa-solid fa-trash-can">delete</i>
+                        <i class="far fa-trash-alt"></i>
+                    </a>
+                </span>
+                <span>
+                    <a href="{% url 'idea_edit' idea.pk %}" class="edit large-icon" aria-label="Click to edit idea">
+                        <i class="far fa-edit"></i>
                     </a>
                 </span>
             </div>
@@ -39,7 +44,7 @@
         <div class="col card mb4 mt3 left top">
             <div class="card-body">
                 <p class="card-text">
-                    {{ idea.content | safe }}
+                    {{ idea.review | safe }}
                 </p>
                 <div class="row">
                     <div class="col-1">
