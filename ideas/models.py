@@ -35,7 +35,7 @@ class Idea(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     activity_location = models.CharField(max_length=200, unique=False)
     activity_website = models.URLField(
-        max_length=200, default="https://www.sample.com")
+        max_length=200, blank=True)
     picture = CloudinaryField('image', default='placeholder')
     cost = models.CharField(max_length=200, choices=COST, default='free')
     age_range = models.CharField(
