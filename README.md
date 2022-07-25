@@ -1,108 +1,219 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Kidsbored
 
-Welcome 0oSaraho0,
+Kidsbored is an activity shareing site for anyone that has to entertain kids for any length of time.  It provides users a clear and simple way to browse and share ideas on things to keep kids entertained.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
 
-## Gitpod Reminders
+(images of media screens)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
 
-`python3 -m http.server`
+# Table of contents   
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
 
-A blue button should appear to click: _Make Public_,
+# User-Experience-Design
 
-Another blue button should appear to click: _Open Browser_.
+## Site Goals
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+The site is aimed at anyone that has to entertain children.  Without logging on the user can brows ideas on what the can do.  They will also be able to log on and share ideas of their own and comment on other peoples ideas.  They will also be able to edit and delete their ideas.
 
-To log into the Heroku toolbelt CLI:
+## Agile Planning
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+This project was developed using agile methodologies, delivering small features over 4 sprints spaced out over 5 weeks.Each issue was labeled must have, should have and could have.  The must have's were completed first, then the should have's then then could have's.  It was done this way to ensure a complete website is made with the nice to have features added if there is capasity.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+My kanban board was made using github projects.  Each view can be clicked in to obtain furhter information.
 
-------
+(pic of issues and pic of kanan board)
 
-## Release History
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+The user stories were grouped into different Epics
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+Epic 1 - Set up
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+The base setup of the Django app was done first as nothing else can be completed beofre this is done. I completed the base html and header and footer. I also included deployment in this section.  
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+Epic 1 user stories
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+- As a developer, I need to set up the project so that it is ready for implementing core features
+- As a developer I want to create a base HTML page so that all pages can use the same format.
+- As a user I want to be able to navigate easily around the site easily on my mobile
+- As site owner, I want to share social media links.
+- As a developer I want to deploy to heroku early to avoid any problems later on
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+Epic 2 - Database model and admin.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+Setting up database model and admin functions and template pages to be able to view the ideas when not logged in
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+Epic 2 User Stories
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+- As a developer I want to lay the foundations of the database to enable users to update their own posts later on.
+- As a user that is not logged in, I want to be able to browse ideas from other users
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+Epic 3 - Setting up login signup and logout pages
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+Epic 3 User Stories
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+- As a new user, I want to be able to sign up easily and intuitively
+- As a returning user, I want to be able to log in easily.
+- As a user, I want to be able to log out of the site safely and easily.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+Epic 4 - CRUD
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+Adding CRUD functionality for users adding editing and deleting ideas
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+Epic 4 User Stories
 
-------
+- As a user, I want to be able to input my own ideas of things to do into the site in an easy and intuitive way so that I can easily share ideas with others
+- As a user I want to be able to comment and like other peoples ideas
+- As a user, I want to be able to edit ideas I have created
+- As a user, I want to be able to delete ideas that I have created
+- As the site owner I want to ensure only the creator of an idea can edit or delete it
 
-## FAQ about the uptime script
+Epic 5 - Styling
 
-**Why have you added this script?**
+Epic 5 User Stories
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+- As a user I want the front page to be clear and self-explanatory so I know I am in the right place
+- As a developer I want to ensure the styling is correct
+- As a developer I want to ensure the forms are all the same style and look good on all devices
 
-**How will this affect me?**
+Epic 6 - Documentation
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+Epic 6 Tasks
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+- Complete Readme documentation
+- Complete testing and writeup
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+## Scope
+- Responsive Design
+- Home page with information about Kidsbored
+- Ability to perform CRUD functionality on ideas
+- Restricted features for not loged in users
 
-**So….?**
+## Structure
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+### Ideasbored Features
 
-**Can I opt out?**
+Navbar
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+user story - - As a user I want to be able to navigate easily around the site easily from any devise
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+Navigation Menu
 
-**Anything more?**
+When the user is not logged in the navigation menu links to the Home page Browse Ideas page and the Sign in page
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+(screen shot of nav bar)
 
----
+Once the user has signed in the navigation menue changes to Home, Browse Ideas, Create Idea and Log out
 
-Happy coding!
+(sceen shot of nav bar)
+
+The sign in, log in, log out pages were made using allauth.
+
+on smaller devices the menu options collapse into a button
+
+(screen shot of mobile nav bar)
+
+### Home Page
+
+- 
+User Story - As a user I want the front page to be clear and self-explanatory so I know I am in the right place
+
+The front page contains a hero image of some happy children eating icecream.  This will make it evident to the user that the website is for children.
+
+(screen shot of her image)
+
+Under this is information about the site and how to share and brows activity ideas.
+
+(screen shot of welcome text)
+
+### Footer
+
+- User Story: As site owner, I want to share social media links.
+
+The Footer has been added to the bottom of the site and contains links to social media sites so that users can also share their ideas and promote the site via social media.
+
+### Browse Ideas
+
+- User Story: As a user that is not logged in, I want to be able to browse ideas from other users.
+
+Anybody can use the webiste to brows ideas, they are shown in the brows ideas page with the activity title and picture in rows of 3.  The activity Title is a link to open up each actiity with further information about it.
+
+(screen shot of brows ideas page)
+
+### Idea Detail 
+
+
+- User Story: As a user I want to be able to comment and like other peoples ideas
+
+Each user story opens up to a full page which contains the image, a link to the activity website if applicable, the age range the activity is aimed at, activity cost per person, the location of the activity and a review.
+
+Logged on users can also comment on and like the ideas.
+
+( screen shot of idea detail page)
+
+### Sign in, log in, log out
+
+User Stories
+- As a new user, I want to be able to sign up easily and intuitively
+- As a returning user, I want to be able to log in easily.
+- As a user, I want to be able to log out of the site safely and easily.
+
+Users can sign in and out using various forms and confirmation pages. These forms were made using allauth and edited using bootstrap
+
+(screenshots of signin out pages)
+
+### Create Idea
+
+- User Story: As a user, I want to be able to input my own ideas of things to do into the site in an easy and intuitive way so that I can easily share ideas with others
+
+Once the user is logged in they can create their own idea using the create Idea form.  The forms were made using crispy forms which were used in conjunction with bootstrap.
+
+(screenshot of create idea form)
+
+### Edit and Delete Idea
+
+User Stories
+- As a user, I want to be able to edit ideas I have created
+- As a user, I want to be able to delete ideas that I have created
+- As the site owner I want to ensure only the creator of an idea can edit or delete it
+
+The creator of an idea will be able to view edit and delete icons on their idea detail page.  The edit button will take them to the create idea form but it will lbe pre populated with information that is already saved.  The user can then update the information and save again where they will be redirected back to the ideas page.
+
+The delete button will take the user to a confirmation page asking them to confirm they wish to delete that idea.  Once an idea is deleted all comments will be deleted with it.
+
+The delete and edit views use LoginRequiredMixin and UserPassesTestMixin to ensure that only the idea creator who is logged in can update or delete their idea.
+
+(screensht of edit and delete buttons and edit and delete pages)
+
+## Features left to impliment
+
+- I had planned to add a profile page that the user could add their picture and details about themselves.  This would also show all their ideas in one place for easy editing or deleting. Unfortunately I ran out of time to add this feature 
+
+- Once the profile page was in place I could add an option to show the creators picture as well as name on their ideas.
+
+- I had also planned to add search options on the brows ideas page allowing users to search by Activity name, location, price or age range.
+
+## Wireframes
+
+Home Page
+
+[Home page wireframe](/static/images/home-page-wireframe.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
