@@ -199,7 +199,41 @@ The delete and edit views use LoginRequiredMixin and UserPassesTestMixin to ensu
 
 Home Page
 
-[Home page wireframe](/static/images/home-page-wireframe.png)
+![Home page wireframe](/static/images/home-page-wireframe.png)
+
+Sign Up
+
+![Sign up wireframe](/static/images/sign-up-wireframe.png)
+
+Log In
+
+![Log in wireframe](/static/images/log-in-wireframe.png)
+
+Log out
+
+![log out wireframe](/static/images/log-out-wireframe.png)
+
+Browse Ideas
+
+![Browse Ideas wireframe](/static/images/browse-ideas-wireframe.png)
+
+Idea Detail
+
+![Idea Detail wireframe](/static/images/idea-detail-wireframe.png)
+
+Create/Edit Idea Form
+
+![Create/Edit Idea wireframe](/static/images/create-idea-wireframe.png)
+
+Delete Idea Conirmation
+
+![Delete Idea wireframe](/static/images/delete-idea-wireframe.png)
+
+## Database
+
+The data was designed to give the user CRUD functionality once signed in.  The 
+
+
 
 
 
