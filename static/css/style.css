@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Ranchers&family=Yusei+Magic&display=swap');
+
+body {
+    font-family: 'Yusei Magic', sans-serif;
+    background-color: #041121;
+    color: rgb(237, 233, 249);
+
+    
+}
+
+.bg-light {
+    background-color: #041121!important;
+    color: rgb(237, 233, 249)!important;
+}
+
+.navbar-brand {
+    font-family: Ranchers, sans-serif;
+    font-size: 3.25rem;
+    margin-left: 1rem;
+    color: rgb(237, 233, 249)!important;
+}
+
+.tag-line {
+    padding: 1rem;
+}
+
+.pic-padding {
+    padding: 0;
+}
+
+.card {
+    color:#041121!important;
+    background-color:rgb(237, 233, 249)!important;
+}

@@ -4,41 +4,75 @@
 {% load crispy_forms_tags %}
 
 <div class="masthead">
-    <div class="container">
+    <div class="container pic-padding card">
         <div class="row g-0">
             <div class="col-md-6">
                 <h1 class="idea-title"> {{ idea.activity_name }}</h1>
                 <p class="idea-subtitle">{{ idea.author }} | {{ idea.updated_on }}</p>
             </div>
-            
+
             <!-- Delete Idea -->
-            <div>
-                
-                <span>
-                    <a href="{% url 'idea_delete' idea.pk %}" class="delete large-icon" aria-label="Click to delete idea">
-                        <i class="far fa-trash-alt"></i>
-                    </a>
-                </span>
-                <span>
-                    <a href="{% url 'idea_edit' idea.pk %}" class="edit large-icon" aria-label="Click to edit idea">
-                        <i class="far fa-edit"></i>
-                    </a>
-                </span>
+            <div class="row-md-3">
+                <div class="col-md-3 float-right ">
+                    <span>
+                        <a href="{% url 'idea_delete' idea.pk %}" class="delete large-icon"
+                            aria-label="Click to delete idea">
+                            <i class="far fa-trash-alt fa-2x"></i>
+                        </a>
+                    </span>
+                    <span>
+                        <a href="{% url 'idea_edit' idea.pk %}" class="edit large-icon" aria-label="Click to edit idea">
+                            <i class="far fa-edit fa-2x"></i>
+                        </a>
+                    </span>
+                </div>
             </div>
-                
-            <div class="d-none d-md-block col-md-6">
+            <div class="row"></div>
+            <div class="d-none d-md-block col-md-12 card">
                 {% if "placeholder" in idea.picture.url %}
-                <img class="card-img-top"
+                <img class="card-img-top border border-light"
                     src="https://res.cloudinary.com/doakyrejw/image/upload/v1657274377/outdoor-games-diy-tictactoe-1583532166.jpg_znxynv.jpg"
                     alt="picture of outdoor tic tac toe on grass" width="100%">
                 {% else %}
-                <img src="{{ post.picture.url }}" width="100%">
+                <img src="{{ idea.picture.url }}" width="100%">
                 {% endif %}
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col card mb4 mt3">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>
+                        <a href="{{ idea.activity_website.url }}" target="_blank" rel="noopener"
+                            aria-label="Please visit the website linked to {{idea.activity_name}} (opens in a new window)"></a>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
 </div>
-
+<div class="container">
+    <div class="row">
+        <div class="col card mb4 mt3">
+            <span>
+                <p>
+                    Price:{{ idea.cost }}
+                </p>
+            </span>
+            <span>
+                <p>
+                    Age Range:{{ idea.age_range }}
+                </p>
+            </span>
+        </div>
+    </div>
+</div>
 <div class="container">
     <div class="row">
         <div class="col card mb4 mt3 left top">
@@ -63,15 +97,15 @@
                             <button type="submit" name="idea_id" value="{{idea.pk}}" class="btn-like">
                                 <i class="far fa-heart"></i>
 
-                            {% endif %}
+                                {% endif %}
                         </form>
-                            {% else %}
+                        {% else %}
 
-                            <span class="text-secondary"><i class="far fa-heart"></i></span>
+                        <span class="text-secondary"><i class="far fa-heart"></i></span>
 
                         {% endif %}
 
-                            <span class="text-secondary">{{ idea.number_of_likes }}</span>  
+                        <span class="text-secondary">{{ idea.number_of_likes }}</span>
                     </div>
                     <div class="col-1">
                         {% with comments.count as total_comments %}
@@ -88,40 +122,40 @@
             <hr>
         </div>
     </div>
-        <div class="row">
-            <div class="col-md-8 card mb-4  mt-3 ">
-                <h3>Comments:</h3>
-                <div class="card-body">
-                    {% for comment in comments %}
-                    <div class="comments" style="padding: 10px;">
-                        <p class="font-weight-bold">
-                            {{ comment.name }}
-                            <span class=" text-muted font-weight-normal">
-                                {{ comment.created_on }}
-                            </span> wrote:
-                        </p>
-                        {{ comment.body | linebreaks }}
-                    </div>
-                    {% endfor %}
+    <div class="row">
+        <div class="col-md-8 card mb-4  mt-3 ">
+            <h3>Comments:</h3>
+            <div class="card-body">
+                {% for comment in comments %}
+                <div class="comments" style="padding: 10px;">
+                    <p class="font-weight-bold">
+                        {{ comment.name }}
+                        <span class=" text-muted font-weight-normal">
+                            {{ comment.created_on }}
+                        </span> wrote:
+                    </p>
+                    {{ comment.body | linebreaks }}
                 </div>
+                {% endfor %}
             </div>
-            <div class="col-md-4 card mb-4  mt-3 ">
-                <div class="card-body">
-                    
-                    {% if user.is_authenticated %}
-                    <h3>Leave a comment:</h3>
-                    <p>Posting as: {{ user.username }}</p>
-                    <form method="post" style="margin-top: 1.3em;">
-                        {{ comment_form | crispy }}
-                        {% csrf_token %}
-                        <button type="submit" - class="btn btn-signup btn-lg">Submit</button>
-                    </form>
-                    {% endif %}
+        </div>
+        <div class="col-md-4 card mb-4  mt-3 ">
+            <div class="card-body">
+
+                {% if user.is_authenticated %}
+                <h3>Leave a comment:</h3>
+                <p>Posting as: {{ user.username }}</p>
+                <form method="post" style="margin-top: 1.3em;">
+                    {{ comment_form | crispy }}
+                    {% csrf_token %}
+                    <button type="submit" - class="btn btn-signup btn-lg">Submit</button>
+                </form>
+                {% endif %}
 
 
-                </div>
             </div>
         </div>
     </div>
+</div>
 
-    {% endblock content %}
+{% endblock content %}
