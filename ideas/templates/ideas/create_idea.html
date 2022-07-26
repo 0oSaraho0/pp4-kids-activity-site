@@ -4,11 +4,12 @@
 
 
 <div class="container">
-
+    <!-- Create form header and information -->
     <h1>Share your Idea</h1>
     <p>Do you have your own fantasic idea to share?</p>
     <p>Complete the form below and let others know what it is!</p>
-    <form class="create_idea_form" method="POST">
+    <!-- Create idea form -->
+    <form class="create_idea_form" method="POST" enctype="multipart/form-data">
         
         {% csrf_token %}
 
