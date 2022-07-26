@@ -12,6 +12,7 @@
             </div>
 
             <!-- Delete Idea -->
+            {% if idea.author == request.user%}
             <div class="row-md-3">
                 <div class="col-md-3 float-right ">
                     <span>
@@ -20,6 +21,7 @@
                             <i class="far fa-trash-alt fa-2x"></i>
                         </a>
                     </span>
+            <!-- Edit Idea -->
                     <span>
                         <a href="{% url 'idea_edit' idea.pk %}" class="edit large-icon" aria-label="Click to edit idea">
                             <i class="far fa-edit fa-2x"></i>
@@ -27,6 +29,7 @@
                     </span>
                 </div>
             </div>
+            {% endif %}
             <div class="row"></div>
             <div class="d-none d-md-block col-md-12 card">
                 {% if "placeholder" in idea.picture.url %}
