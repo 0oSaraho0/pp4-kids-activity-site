@@ -6,8 +6,11 @@ body {
     font-family: 'Yusei Magic', sans-serif;
     background-color: #041121;
     color: rgb(237, 233, 249);
+}
 
-    
+a {
+    text-decoration: none;
+    color: #041121;
 }
 
 /* Navbar */
