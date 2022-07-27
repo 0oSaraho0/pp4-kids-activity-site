@@ -31,13 +31,13 @@
             </div>
             {% endif %}
             <div class="row"></div>
-            <div class="d-none d-md-block col-md-12 card">
+            <div class="d-md-block col-md-12 card">
                 {% if "placeholder" in idea.picture.url %}
-                <img class="card-img-top border border-light"
+                <img class="card-img-top border border-light ideas-detail-pic"
                     src="https://res.cloudinary.com/doakyrejw/image/upload/v1657274377/outdoor-games-diy-tictactoe-1583532166.jpg_znxynv.jpg"
                     alt="picture of outdoor tic tac toe on grass" width="100%">
                 {% else %}
-                <img src="{{ idea.picture.url }}" width="100%">
+                <img  class="card-img-top border border-light ideas-detail-pic" src="{{ idea.picture.url }}" width="100%">
                 {% endif %}
             </div>
         </div>

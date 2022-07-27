@@ -15,11 +15,11 @@
                         <div class="card mb-4">
                             <div class="card-body">
                                 {% if "placeholder" in idea.picture.url %}
-                                <img class="card-img-top" 
+                                <img class="card-img-top ideas-page-pic" 
                                 src="https://res.cloudinary.com/doakyrejw/image/upload/v1657274377/outdoor-games-diy-tictactoe-1583532166.jpg_znxynv.jpg" 
                                 alt="picture of outdoor tic tac toe on grass">
                                 {% else %}
-                                <img class="card-img-top" src="{{ idea.picture.url }}" alt="">
+                                <img class="card-img-top ideas-page-pic" src="{{ idea.picture.url }}" alt="">
                                 {% endif %}
                                 <div>
                                     <p class="author">Author: {{ idea.author }}</p>
