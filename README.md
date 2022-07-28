@@ -195,7 +195,7 @@ The delete and edit views use LoginRequiredMixin and UserPassesTestMixin to ensu
 
 - I had also planned to add search options on the brows ideas page allowing users to search by Activity name, location, price or age range.
 
-## Wireframes
+# Wireframes
 
 Home Page
 
@@ -229,25 +229,69 @@ Delete Idea Conirmation
 
 ![Delete Idea wireframe](/static/images/delete-idea-wireframe.png)
 
-## Database
+# Database
 
-The data was designed to give the user CRUD functionality once signed in.  The 
+The data was designed to give the user CRUD functionality once signed in.  Ideas are connected to the author by foreign key which allows users to edit and delete ideas connected to their account. 
 
+# Security
 
+Views were secured by using the django based view mixin, UserPassesTestMixin.  A test function was created to use the mixin and checks that the user is authorised to access the page.  an if statement is also used in idea_detail.html to hide the delete and edit buttons if the user is not authorised.  
 
+Environment variables were stored in an env.py file for security purposes to ensure no secret keys, api keys or sensitive information were added to the repository.  These variables were added to heroku config vars withing the project
 
+# Design
 
+## Colour Scheme
 
+I opted for a simple colour scheme.  It needed to be gender neutral and although the site is about children it is aimed at adults so I wanted a more adult feel to it.  I also wanted it to be neutral so that the user ides stood out.  with this in mind I went for a background colour of #041121
 
+![Background colour](/static/images/background-colour.png)
 
+and a text colour of rgb(237, 233, 249.
 
+![Text colour](/static/images/text-colour-1.png)
 
+## Typogropny
 
+I used Yusei Magic for the body of the site and Ranchers for the Kidsbored heading.
 
+I downloaded these from google fonts and imported them into the style sheet
 
+## Imagery  
 
+The hero image used is a picture of my own.  I sought permissin from the parents of the chidren.
 
+# Technologies
 
+- HTML
+  - The structure of the site was made using HTML
+- CSS
+  - The website was styled using CSS in an external stylesheet 
+- Python 
+  - Python was the main programming language used within the django app
+- Github
+  - Source code was hosted in Github
+- Git
+  - Git was used to commit and push code during development 
+- Font Awesome
+  - Various Font Awesoe icons were used throughout the site
+- Balsamiq
+  - Balsamiq wireframes were used to plan 
 
+## External Python Modules
+- cloudinary==1.29.0 - cloudinary was used to store imagery for the site and to upload user images
+- dj-database-url==0.5.0 - used to parse database url for production environment
+- dj3-cloudinary-storage==0.0.6 - Storage system for cloudinary
+- Django==3.2.13 - Framework used to build the application
+- django-allauth==0.51.0 - Used for the sites sign in and sign out authentication system 
+- django-cloudinary-storage==0.3.0 - Storage for cloudinary
+- django-crispy-forms==1.14.0 - used to style forms 
+- django-summernote==0.8.20.0 - used in admin panel
+- gunicorn==20.1.0 - Installed as a dependency with another package
+- oauthlib==3.2.0 - Installed as a dependency with another package
+- Pillow==9.2.0 - Installed to upload images but ended up using cloudinary istead,  left incase needed for future development
+- psycopg2==2.9.3 Needed for heroku deployment 
+- whitenoise==6.2.0 - Installed to deploy static files to heroku.
 
+# Testing
 
