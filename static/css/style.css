@@ -71,13 +71,42 @@ a {
     object-fit: cover;
 }
 
+
+/* Idea detail page*/
+
+/* like and comment amount*/
+
+.like-comment {
+    padding: 0;
+}
+
 /* Media Screens */
 
+/* Media Screen under 992px */
+@media only screen and (max-width: 992px) {
+    .like-comment {
+        width: 11%;
+    }
+}
 /* Media Screen under 768px*/
 
 @media only screen and (max-width: 768px) {
     .ideas-page-pic {
         height: 72vw;
+    }
+}
+
+/* Media Screen under 555px */
+@media only screen and (max-width: 555px) {
+    .like-comment {
+        width: 13%;
+    }
+}
+
+/* Media Screen under 475px */
+@media only screen and (max-width: 475px) {
+    .like-comment {
+        width: 19%;
     }
 }
 
