@@ -1,5 +1,6 @@
-from django.shortcuts import render, get_object_or_404, reverse
-from django.views.generic import CreateView, DetailView, ListView, DeleteView, UpdateView
+from django.shortcuts import render, get_object_or_404
+from django.views.generic import (CreateView,
+                                  DetailView, ListView, DeleteView, UpdateView)
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.http import HttpResponseRedirect
 from django.contrib import messages
@@ -32,11 +33,12 @@ class IdeaDetail(DetailView):
                 "idea": idea,
                 "comments": comments,
                 "liked": liked,
-                "comment_form": CommentForm()               
+                "comment_form": CommentForm()
             },
         )
 
     def post(self, request, pk, *args, **kwargs):
+        """ A function to post the idea items """
         queryset = Idea.objects
         idea = get_object_or_404(queryset, pk=pk)
         comments = idea.comments.order_by("-created_on")
@@ -64,7 +66,6 @@ class IdeaDetail(DetailView):
                 "commented": True,
                 "liked": liked,
                 "comment_form": CommentForm()
-                
             },
         )
 
@@ -73,6 +74,7 @@ class IdeaLike(CreateView):
     """ A view to like an idea """
 
     def post(self, request, pk):
+        """ A function to add or remove a like """
         idea = get_object_or_404(Idea, pk=pk)
 
         if idea.likes.filter(id=request.user.id).exists():
@@ -92,6 +94,7 @@ class IdeaCreate(CreateView):
     model = Idea
 
     def form_valid(self, form):
+        """ If form is valid return to browse ideas """
         form.instance.author = self.request.user
         messages.success(self.request, 'Idea created successfully')
         return super(IdeaCreate, self).form_valid(form)
@@ -115,15 +118,13 @@ class IdeaEdit(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     success_url = "/ideas/ideas/"
     template_name = "ideas/idea_edit_form.html"
     queryset = Idea.objects
-    
+
     def form_valid(self, form):
-        # if form is valid return to discussion
+        """ If form is valid return to browse ideas"""
         self.success_url + str(self.object.pk) + '/'
         messages.success(self.request, 'Idea updated successfully')
         return super().form_valid(form)
 
-
     def test_func(self):
+        """ A function to test if the user is the author """
         return self.request.user == self.get_object().author
-
-    

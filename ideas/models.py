@@ -4,6 +4,7 @@ from cloudinary.models import CloudinaryField
 
 
 class Idea(models.Model):
+    """ A model to create Idea items """
 
     COST = [('free', 'Free'),
             ('10', 'Under £10 per person'),
@@ -44,16 +45,19 @@ class Idea(models.Model):
     likes = models.ManyToManyField(User, related_name='idea_likes', blank=True)
 
     class Meta:
+        """ Order by Activity Name """
         ordering = ['activity_name']
 
     def __str__(self):
         return self.activity_name
 
     def number_of_likes(self):
+        """ A function to count the number of likes """
         return self.likes.count()
 
 
 class Comment(models.Model):
+    """ A model to make a comment """
     idea = models.ForeignKey(
         Idea, on_delete=models.CASCADE, related_name="comments")
     name = models.CharField(max_length=80)
@@ -63,6 +67,7 @@ class Comment(models.Model):
     approved = models.BooleanField(default=False)
 
     class Meta:
+        """ Order by created on date """
         ordering = ["created_on"]
 
     def __str__(self):

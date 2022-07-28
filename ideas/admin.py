@@ -5,6 +5,7 @@ from django_summernote.admin import SummernoteModelAdmin
 
 @admin.register(Idea)
 class IdeaAdmin(SummernoteModelAdmin):
+    """ A class to display idea ideams on admin """
 
     list_display = ('activity_name', 'updated_on')
     search_fields = ['activity_name', 'content']
@@ -14,12 +15,8 @@ class IdeaAdmin(SummernoteModelAdmin):
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
+    """ A class to display comment items on admin """
 
     list_display = ('name', 'body', 'idea', 'created_on')
     list_filter = ('created_on',)
     search_fields = ('name', 'email', 'body')
-
-
-
-
-# Register your models here.
