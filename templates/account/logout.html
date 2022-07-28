@@ -5,7 +5,7 @@
 {% block head_title %}{% trans "Sign Out" %}{% endblock %}
 
 {% block content %}
-
+<!-- Log out form -->
 <div class="container">
   <div class="form-control">
     <div class="row">
@@ -18,7 +18,7 @@
     </div>
     <div class="row">
       <div class="col-md-4 mt-3 offset-md-3">
-
+        <!-- form to log out -->
         <form method="post" action="{% url 'account_logout' %}">
           {% csrf_token %}
           {% if redirect_field_value %}
@@ -30,4 +30,5 @@
       </div>
     </div>
   </div>
-  {% endblock %}
+</div>
+{% endblock %}

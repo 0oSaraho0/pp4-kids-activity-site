@@ -3,6 +3,7 @@
 {% block content %}
 {% load crispy_forms_tags %}
 
+<!-- idea detail card -->
 <div class="masthead">
     <div class="container pic-padding card">
         <div class="row g-0">
@@ -33,10 +34,12 @@
             <div class="row">
                 <div class="d-md-block col-md-12 card">
                     {% if "placeholder" in idea.picture.url %}
+                    <!-- placeholder picture -->
                     <img class="card-img-top border border-light ideas-detail-pic"
                         src="https://res.cloudinary.com/doakyrejw/image/upload/v1657274377/outdoor-games-diy-tictactoe-1583532166.jpg_znxynv.jpg"
                         alt="picture of outdoor tic tac toe on grass">
                     {% else %}
+                    <!-- uploaded picture -->
                     <img class="card-img-top border border-light ideas-detail-pic" src="{{ idea.picture.url }}" alt="">
                     {% endif %}
                 </div>
@@ -50,6 +53,7 @@
         <div class="col card mb4 mt3">
             <div class="row">
                 <div class="col-md-12">
+                    <!-- Activity Website Address-->
                     <p> Activity Website:
                         <a href="{{ idea.activity_website }}" target="_blank" rel="noopener"
                             aria-label="Please visit the website linked to {{idea.activity_name}} (opens in a new window)">
@@ -63,9 +67,11 @@
 <div class="container">
     <div class="row">
         <div class="col card mb4 mt3">
+            <!-- Activity Cost -->
             <span>
                     Price:  {{ idea.cost }}
             </span>
+            <!-- Activity Price Range -->
             <span>
                     Age Range:  {{ idea.age_range }}
             </span>
@@ -76,12 +82,15 @@
     <div class="row">
         <div class="col card mb4 mt3 left top">
             <div class="card-body">
+                <!-- Activity Review -->
                 <p class="card-text">
                     {{ idea.review | safe }}
                 </p>
                 <div class="row">
                     <div class="col-1 like-comment">
+                        <!-- check user is logged in -->
                         {% if user.is_authenticated %}
+                        <!-- Form Button to like an idea, toggles button on and off again when clicked -->
                         <form class="d-inline" action="{% url 'idea_like' idea.pk %}" method="POST">
                             {% csrf_token %}
                             {% if liked %}
@@ -99,9 +108,10 @@
                         <span class="text-secondary"><i class="far fa-heart"></i></span>
 
                         {% endif %}
-
+                        <!-- shows number of likes an idea has -->
                         <span class="text-secondary">{{ idea.number_of_likes }}</span>
                     </div>
+                    <!-- Shows number of comments an idea has -->
                     <div class="col-1 like-comment">
                         {% with comments.count as total_comments %}
                         <strong class="text-secondary"><i class="far fa-comments"></i>
@@ -119,16 +129,20 @@
     </div>
     <div class="row">
         <div class="col-md-8 card mb-4  mt-3 ">
+            <!-- Comments section -->
             <h3>Comments:</h3>
             <div class="card-body">
                 {% for comment in comments %}
                 <div class="comments" style="padding: 10px;">
                     <p class="font-weight-bold">
+                        <!-- Name of commentor-->
                         {{ comment.name }}
                         <span class=" text-muted font-weight-normal">
+                            <!-- Date comment was created on-->
                             {{ comment.created_on }}
                         </span> wrote:
                     </p>
+                    <!-- The comment -->
                     {{ comment.body | linebreaks }}
                 </div>
                 {% endfor %}
@@ -136,14 +150,16 @@
         </div>
         <div class="col-md-4 card mb-4  mt-3 ">
             <div class="card-body">
-
+                <!-- Check if the user is logged in-->
                 {% if user.is_authenticated %}
                 <h3>Leave a comment:</h3>
+                <!-- commenter username-->
                 <p>Posting as: {{ user.username }}</p>
+                <!-- Comment form -->
                 <form method="post" style="margin-top: 1.3em;">
                     {{ comment_form | crispy }}
                     {% csrf_token %}
-                    <button type="submit" - class="btn btn-signup btn-lg">Submit</button>
+                    <button type="submit" class="btn btn-signup btn-lg">Submit</button>
                 </form>
                 {% endif %}
             </div>

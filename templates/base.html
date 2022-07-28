@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,75 +10,86 @@
     <meta name="keywords" content="kids, things to do with children, activities, sharing, bored kids, parents">
     <meta name="description" content="Kids Bored, an activity sharing ideas page for parents">
     <!-- bootstrap css link -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- bootstrap js link -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
     <!-- my css link -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <!-- font awesome link -->
     <script src="https://kit.fontawesome.com/aad6cd9071.js" crossorigin="anonymous"></script>
-    <title>Kids Bored</title>
+    <title>Kidsbored</title>
 </head>
+
 <body>
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-md navbar-dark bg-light">
+        <!-- Kidsbored Title -->
         <a class="navbar-brand" href="{% url 'home' %}">Kidsbored</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+        <!-- Navigation list -->
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav text-end">
-            <li class="nav-item active">
-                <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'ideas' %}">Browse Ideas</a>
-            </li>
-            {% if user.is_authenticated %}
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'create' %}">Add Idea</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'account_logout' %}">Log Out</a>
-            </li>
-            {% else %}
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{%url 'account_login' %}">Log In</a>
-            </li>
-            {% endif %}
-            
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'ideas' %}">Browse Ideas</a>
+                </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'create' %}">Add Idea</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'account_logout' %}">Log Out</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{%url 'account_login' %}">Log In</a>
+                </li>
+                {% endif %}
             </ul>
         </div>
     </nav>
-
 
     <main class="flex-shrink-0 main-bg">
         {% block content %}
         <!-- Content Goes here -->
         {% endblock content %}
     </main>
-    
-    
-    <!-- Footer -->
 
+    <!-- Footer -->
     <footer class="footer mt-auto py-3 dark-bg">
-        <p class="m-0 text-center text-white">Kids Bored</p>
-        <p class="m-0 text-center text-white">Follow us: 
-            <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Please visit our Facebook Page (opens in a new tab)">
-            <i class="fab fa-facebook-square ms-3"></i></a>
-            <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Please visit our Twitter Page (opens in a new tab)">
-            <i class="fab fa-twitter-square ms-3"></i></a>
-            <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Please visit our Instagram Page (opens in a new tab)">
-            <i class="fab fa-instagram-square ms-3"></i></a>
-            <a href="https://youtube.com/" target="_blank" rel="noopener" aria-label="Please visit our Youtube Page (opens in a new tab)">
-            <i class="fab fa-youtube-square ms-3"></i></a>
+        <p class="m-0 text-center text-white">Kidsbored</p>
+        <p class="m-0 text-center text-white">Follow us:
+            <!-- Facebook link-->
+            <a href="https://www.facebook.com" target="_blank" rel="noopener"
+                aria-label="Please visit our Facebook Page (opens in a new tab)">
+                <i class="fab fa-facebook-square ms-3"></i></a>
+            <!-- Twitter link -->
+            <a href="https://twitter.com" target="_blank" rel="noopener"
+                aria-label="Please visit our Twitter Page (opens in a new tab)">
+                <i class="fab fa-twitter-square ms-3"></i></a>
+            <!-- Instagram link -->
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener"
+                aria-label="Please visit our Instagram Page (opens in a new tab)">
+                <i class="fab fa-instagram-square ms-3"></i></a>
+            <!-- Youtube link -->
+            <a href="https://youtube.com/" target="_blank" rel="noopener"
+                aria-label="Please visit our Youtube Page (opens in a new tab)">
+                <i class="fab fa-youtube-square ms-3"></i></a>
         </p>
     </footer>
-    
-    
+
 </body>
+
 </html>

@@ -15,19 +15,24 @@
                         <div class="card mb-4">
                             <div class="card-body">
                                 {% if "placeholder" in idea.picture.url %}
+                                <!-- Placeholder image-->
                                 <img class="card-img-top ideas-page-pic" 
                                 src="https://res.cloudinary.com/doakyrejw/image/upload/v1657274377/outdoor-games-diy-tictactoe-1583532166.jpg_znxynv.jpg" 
                                 alt="picture of outdoor tic tac toe on grass">
                                 {% else %}
+                                <!-- User image -->
                                 <img class="card-img-top ideas-page-pic" src="{{ idea.picture.url }}" alt="">
                                 {% endif %}
+                                <!-- Idea Author-->
                                 <div>
                                     <p class="author">Author: {{ idea.author }}</p>
                                 </div>
+                                <!-- Activity name and link to idea detail page -->
                             <a href="{% url 'idea_detail' idea.pk idea.activity_name %}" class="idea-link">
                                 <h2 class="card-title">{{ idea.activity_name }}</h2>
                             </a>
                             <hr>
+                            <!-- date idea was updated on and number of likes -->
                             <p class="card-text text-muted h6">{{ idea.updated_on}}</p><i
                                     class="far fa-heart">{{ idea.number_of_likes }}</i>
 
@@ -35,7 +40,7 @@
                             </div>
                         </div>
                     </div>
-
+                <!-- starts a new row after every 3 ideas posted -->
                 {% if forloop.counter|divisibleby:3 %}
 
             </div>
@@ -45,6 +50,7 @@
             </div>
         </div>
     </div>
+    <!-- puts next page button at the bottom of the page when there are more than 6 ideas on a page-->
     {% if is_paginated %}
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
