@@ -355,6 +355,102 @@ Steps:
 Expected outcome: User is redirected to the home page.  The Navbar changes to show the create idea option and log out options.
 Actual outcome: User is redirected to the home page.  The Navbar changed to show the create Idea potion and log out option.
 
+### Create Idea Page
+
+Testing was taken out to ensure the user could create a new idea.
 
 
+Assuming user is already logged in
+Steps:
+- Navigate to Add Idea page
+- Complete form
+  - Activity Name
+  - Upload Image (optional)
+  - Activity Location
+  - Age Range
+  - Price
+  - Activity Website(optional)
+  - Review (optional)
+- Click Submit
+
+  Expected Outcome if all fields are filled in correctly the user will be redirected to the Brows Ideas page where they can view their idea.
+
+  Expected outcome if the fields are not filled in correctly: A nocies to complete the field appears and the cursor goes to the field that needs to be competed.
+
+  Both of these outcomes happened correctly when tested.
+
+### Edit Idea
+
+Tested to ensure the user could edit their idea.
+
+Assuming the user is logged in
+Steps:
+- Navigate to the brows ideas page
+- Click on the Activity Name
+- If the user is the Author of the activity they will see a delete button and an Edit button under the Activity Name
+- Click the edit button
+- Update the filds you wish to update
+- Click Submit
+
+Expected outcome:  The user will be redirected back to the browse ideas page which will show the new information.
+
+The outcome was as expected.
+
+### Delete a post
+
+Tested to ensure a user could delete their idea.
+
+Assuming the user is logged in
+Steps:
+- Navigate to the brows ideas page
+- Click on the Activity Name
+- If the user is the Author of the activity they will see a delete button and an Edit button under the Activity Name
+- Click the delete button
+- User is taken to a Delete confirmation page asking them if their wish to delete that idea showing the activity name.
+- Click Submit
+
+Expected outcome:  The user will be redirected back to the browse ideas page and the idea along with the comments will e deleted.
+
+The outcome was as expected.
+
+### Comment on a post
+
+First I check the comment section when the user is Logged out.
+As expected there is no option to enter a comment at all.  You can view other peoples comments but the box to write your own comment is hidden.
+
+If they user is logged in:
+Steps
+- Navigate to Browse Ideas
+- Click on the activity name
+- scroll down to the comments section.
+- Write your comment in the comments box
+- Click submit
+
+Expected outcome: The comment will appear in the comment section to the left of the comment box.
+
+The outcome was as expected.
+
+
+## Accessibility
+
+## Validator Testing
+
+All pages were run through the [w3 HTML validator](https://validator.w3.org/).  Initially there were some errors, for example   there were some missing closing tags and a <p> tag that was used incorrectly inside a <span>.  
+
+All issues were fixed and all pages ran through the checker with no errors.
+
+Due to the use of django language within the HTML files to complete this check I had to retrieve the html code from the open web page and right click to view the sourse code.  I could then copy and paste this into the validator.
+
+![w3 HTML Validator](/static/images/html-check.png)
+
+## PP8 Validator
+
+All pages were run through the [PEP8 Validator  ](http://pep8online.com/).  There were some errors, for example lines to long and whitespace. All issues were corrected and all pages apart from the settings.py page have passed.  The settings file contains code that is not mine so I did not change it.
+
+![PEP8 Validator](/static/images/pep8.png)
+
+
+I didn't use any javascript in my project so there was nothing to test here.
+
+## Lighthouse Report
 
