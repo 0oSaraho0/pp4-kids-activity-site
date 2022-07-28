@@ -295,3 +295,66 @@ The hero image used is a picture of my own.  I sought permissin from the parents
 
 # Testing
 
+## Functional Testing
+
+### Navigation Links
+
+Testing was performed on on all navigation links throughout the site.  I achieved this by clicking on each link to ensure it went to the correct place.
+
+kidsbored Logo => index.html
+Home page => index.html
+Browse Ideas => ideas.html
+Idea Title => ideas_detail.html
+Delete Button => idea_delete.html
+Edit Button => idea_edit_form.html
+Edit Button Submit Button => ideas.html
+Activity Website => chosen website(opens in new tab)
+Register => signup.html
+Add Idea = > create_idea.html
+Add Idea Submit Button => ideas.html
+Log In => login.html
+Log Out => logout.html
+
+All navigatin links wored as expected
+
+### Footer
+
+All the font awesome icons in the footer opened to their respective websites, in a new window, as expected.
+
+### Sign Up Page
+
+Testing was taken out to ensure a user could sign up to the website.
+Steps:
+- Navigate to [Kidsbored](https://kids-bored.herokuapp.com/)
+- Navigate to Register page
+- Enter User Name and Password, email is optional
+- Click Sign Up
+
+Expected outcome: User is redirected to the home page.  The Navbar changed to show the create Idea potion and log out option.
+Actual outcome: User is redirected to the home page.  The Navbar changed to show the create Idea potion and log out option.
+
+### Log out Page
+
+Testing was taken out to ensure a user could log out of the website.
+Steps:
+- Navigate to Log Out page
+- Click Confirm button
+
+Expected outcome: User is taken back to the homepage with the Create Idea option hidden and the Register option showing.
+Actual outcome: User is taken back to the homepage with the Create Idea option hidden and the Register option showing.
+
+### Log in
+
+Testing was taken out to ensure a user could log in to the website.
+Steps:
+- Navigate to [Kidsbored](https://kids-bored.herokuapp.com/)
+- Navigate to Log In page
+- Enter User Name and Password
+- Click Sign in
+
+Expected outcome: User is redirected to the home page.  The Navbar changes to show the create idea option and log out options.
+Actual outcome: User is redirected to the home page.  The Navbar changed to show the create Idea potion and log out option.
+
+
+
+
