@@ -137,7 +137,7 @@
                     <p class="font-weight-bold">
                         <!-- Name of commentor-->
                         {{ comment.name }}
-                        <span class=" text-muted font-weight-normal">
+                        <span class=" card-text font-weight-normal">
                             <!-- Date comment was created on-->
                             {{ comment.created_on }}
                         </span> wrote:
@@ -154,9 +154,8 @@
                 {% if user.is_authenticated %}
                 <h3>Leave a comment:</h3>
                 <!-- commenter username-->
-                <p>Posting as: {{ user.username }}</p>
+                <p class="card-text">Posting as: {{ user.username }}</p>
                 <!-- Comment form -->
-                <form method="post" style="margin-top: 1.3em;">
                     {{ comment_form | crispy }}
                     {% csrf_token %}
                     <button type="submit" class="btn btn-signup btn-lg">Submit</button>
