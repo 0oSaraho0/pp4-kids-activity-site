@@ -10,9 +10,9 @@
   <div class="form-control">
     <div class="row">
       <div class="col-md-4 mt-3 offset-md-3">
-
+        <!-- Sign up page-->
         <h1>{% trans "Sign Up" %}</h1>
-
+        <!-- Redirect to log in if user has an account already-->
         <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign
             in</a>.{% endblocktrans %}</p>
 
@@ -20,7 +20,7 @@
     </div>
     <div class="row">
       <div class="col-md-4 mt-3 offset-md-3">
-
+        <!-- Sign up form-->
         <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
           {% csrf_token %}
           {{ form.as_p }}
