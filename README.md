@@ -1,14 +1,10 @@
 # Kidsbored
 
-Kidsbored is an activity shareing site for anyone that has to entertain kids for any length of time.  It provides users a clear and simple way to browse and share ideas on things to keep kids entertained.
+Kidsbored is an activity sharing site for anyone that has to entertain kids for any length of time.  It provides users a clear and simple way to browse and share ideas on things to keep kids entertained.
 
-
-
-(images of media screens)
-
+![Responsive Screens](/static/images/responsive-screens.png)
 
 # Table of contents   
-
 
 
 
@@ -16,13 +12,13 @@ Kidsbored is an activity shareing site for anyone that has to entertain kids for
 
 ## Site Goals
 
-The site is aimed at anyone that has to entertain children.  Without logging on the user can brows ideas on what the can do.  They will also be able to log on and share ideas of their own and comment on other peoples ideas.  They will also be able to edit and delete their ideas.
+The site is aimed at anyone that has to entertain children.  Without signing in the user can browse ideas on what they can do.  They will also be able to log on and share ideas of their own and comment on other people’s ideas.  They will also be able to edit and delete their ideas.
 
 ## Agile Planning
 
-This project was developed using agile methodologies, delivering small features over 4 sprints spaced out over 5 weeks.Each issue was labeled must have, should have and could have.  The must have's were completed first, then the should have's then then could have's.  It was done this way to ensure a complete website is made with the nice to have features added if there is capasity.
+This project was developed using agile methodologies, delivering small features over 4 sprints spaced out over 5 weeks.  Each issue was labelled must have, should have and could have.  The must have features were completed first, then the should have's, then the could have's.  It was done this way to ensure a complete website is made with the nice to have features added if there is capacity.
 
-My kanban board was made using github projects.  Each view can be clicked in to obtain furhter information.
+My kanban board was made using github projects which can be viewed [here](https://github.com/users/0oSaraho0/projects/3).  Each view can be clicked in to obtain further information.
 
 ![kanban](/static/images/kanban.png)
 
@@ -30,15 +26,15 @@ The user stories were grouped into different Epics
 
 Epic 1 - Set up
 
-The base setup of the Django app was done first as nothing else can be completed beofre this is done. I completed the base html and header and footer. I also included deployment in this section.  
+The base setup of the Django app was done first as nothing else can be completed before this is done. I completed the base html, the header and footer. I also included deployment in this section so as to avoid complications at the end.
 
 Epic 1 user stories
 
 - As a developer, I need to set up the project so that it is ready for implementing core features
-- As a developer I want to create a base HTML page so that all pages can use the same format.
-- As a user I want to be able to navigate easily around the site easily on my mobile
-- As site owner, I want to share social media links.
-- As a developer I want to deploy to heroku early to avoid any problems later on
+- As a developer, I want to create a base HTML page so that all pages can use the same format.
+- As a user, I want to be able to navigate easily around the site easily on my mobile
+- As a site owner, I want to share social media links.
+- As a developer, I want to deploy to heroku early to avoid any problems later on
 
 Epic 2 - Database model and admin.
 
@@ -46,7 +42,7 @@ Setting up database model and admin functions and template pages to be able to v
 
 Epic 2 User Stories
 
-- As a developer I want to lay the foundations of the database to enable users to update their own posts later on.
+- As a developer, I want to lay the foundations of the database to enable users to update their own posts later on.
 - As a user that is not logged in, I want to be able to browse ideas from other users
 
 Epic 3 - Setting up login signup and logout pages
@@ -64,7 +60,7 @@ Adding CRUD functionality for users adding editing and deleting ideas
 Epic 4 User Stories
 
 - As a user, I want to be able to input my own ideas of things to do into the site in an easy and intuitive way so that I can easily share ideas with others
-- As a user I want to be able to comment and like other peoples ideas
+- As a user, I want to be able to comment and like other people’s ideas
 - As a user, I want to be able to edit ideas I have created
 - As a user, I want to be able to delete ideas that I have created
 - As the site owner I want to ensure only the creator of an idea can edit or delete it
@@ -74,8 +70,8 @@ Epic 5 - Styling
 Epic 5 User Stories
 
 - As a user I want the front page to be clear and self-explanatory so I know I am in the right place
-- As a developer I want to ensure the styling is correct
-- As a developer I want to ensure the forms are all the same style and look good on all devices
+- As a developer, I want to ensure the styling is correct
+- As a developer, I want to ensure the forms are all the same style and look good on all devices
 
 Epic 6 - Documentation
 
@@ -88,11 +84,11 @@ Epic 6 Tasks
 - Responsive Design
 - Home page with information about Kidsbored
 - Ability to perform CRUD functionality on ideas
-- Restricted features for not loged in users
+- Restricted features for not logged in users
 
 ## Structure
 
-### Ideasbored Features
+### Kidsbored Features
 
 Navbar
 
@@ -104,13 +100,13 @@ When the user is not logged in the navigation menu links to the Home page Browse
 
 ![Navbar before login](/static/images/navbar-before-login.png)
 
-Once the user has signed in the navigation menue changes to Home, Browse Ideas, Create Idea and Log out
+Once the user has signed in the navigation menu changes to Home, Browse Ideas, Create Idea and Log out
 
 ![Navbar](/static/images/navbar.png)
 
 The sign in, log in, log out pages were made using allauth.
 
-on smaller devices the menu options collapse into a button
+on smaller devices, the menu options collapse into a button
 
 ![Mobile Navbar](/static/images/mob-navbar.png)
 
@@ -118,11 +114,11 @@ on smaller devices the menu options collapse into a button
 
 - User Story - As a user I want the front page to be clear and self-explanatory so I know I am in the right place
 
-The front page contains a hero image of some happy children eating icecream.  This will make it evident to the user that the website is for children.
+The front page contains a hero image of some happy children eating ice cream.  This will make it evident to the user that the website is for children.
 
 ![Hero Image](/static/images/hero-image-for-readme.png)
 
-Under this is information about the site and how to share and brows activity ideas.
+Under this is information about the site and how to share and browse activity ideas.
 
 ![Welcome Text](/static/images/welcome-text.png)
 
@@ -136,17 +132,17 @@ The Footer has been added to the bottom of the site and contains links to social
 
 - User Story: As a user that is not logged in, I want to be able to browse ideas from other users.
 
-Anybody can use the webiste to brows ideas, they are shown in the brows ideas page with the activity title and picture in rows of 3.  The activity Title is a link to open up each actiity with further information about it.
+Anybody can use the website to browse ideas, they are shown in the browse ideas page with the activity title and pictures in rows of 3.  The activity Title is a link to open up each activity with further information about it.
 
 (screen shot of brows ideas page)
 
 ### Idea Detail 
 
-- User Story: As a user I want to be able to comment and like other peoples ideas
+- User Story: As a user, I want to be able to comment and like otherpeople’ss ideas
 
 Each user story opens up to a full page which contains the image, a link to the activity website if applicable, the age range the activity is aimed at, activity cost per person, the location of the activity and a review.
 
-Logged on users can also comment on and like the ideas.
+Logged-on users can also comment on and like the ideas.
 
 ( screen shot of idea detail page)
 
@@ -178,7 +174,9 @@ User Stories
 - As a user, I want to be able to delete ideas that I have created
 - As the site owner I want to ensure only the creator of an idea can edit or delete it
 
-The creator of an idea will be able to view edit and delete icons on their idea detail page.  The edit button will take them to the create idea form but it will lbe pre populated with information that is already saved.  The user can then update the information and save again where they will be redirected back to the ideas page.
+The creator of an idea will be able to view edit and delete icons on their idea detail page.  The edit button will take them to the create idea form but it will be pre-populated with information that is already saved.  The user can then update the information and save it again where they will be redirected back to the ideas page.
+
+They will get a toast message to advise them that their creation/edit has been successful
 
 The delete button will take the user to a confirmation page asking them to confirm they wish to delete that idea.  Once an idea is deleted all comments will be deleted with it.
 
@@ -188,9 +186,9 @@ The delete and edit views use LoginRequiredMixin and UserPassesTestMixin to ensu
 
 ## Features left to impliment
 
-- I had planned to add a profile page that the user could add their picture and details about themselves.  This would also show all their ideas in one place for easy editing or deleting. Unfortunately I ran out of time to add this feature 
+- I had planned to add a profile page where the user could add their picture and details about themselves.  This would also show all their ideas in one place for easy editing or deleting. Unfortunately, I ran out of time to add this feature 
 
-- Once the profile page was in place I could add an option to show the creators picture as well as name on their ideas.
+- Once the profile page was in place I could add an option to show the creator’s picture as well as their name on their ideas.
 
 - I had also planned to add search options on the brows ideas page allowing users to search by Activity name, location, price or age range.
 
@@ -236,13 +234,13 @@ The data was designed to give the user CRUD functionality once signed in.  Ideas
 
 Views were secured by using the django based view mixin, UserPassesTestMixin.  A test function was created to use the mixin and checks that the user is authorised to access the page.  an if statement is also used in idea_detail.html to hide the delete and edit buttons if the user is not authorised.  
 
-Environment variables were stored in an env.py file for security purposes to ensure no secret keys, api keys or sensitive information were added to the repository.  These variables were added to heroku config vars withing the project
+Environment variables were stored in an env.py file for security purposes to ensure no secret keys, api keys or sensitive information were added to the repository.  These variables were added to heroku config vars within the project
 
 # Design
 
 ## Colour Scheme
 
-I opted for a simple colour scheme.  It needed to be gender neutral and although the site is about children it is aimed at adults so I wanted a more adult feel to it.  I also wanted it to be neutral so that the user ides stood out.  with this in mind I went for a background colour of #041121
+I opted for a simple colour scheme.  It needed to be gender neutral and although the site is about children it is aimed at adults so I wanted a more adult feel to it.  I also wanted it to be neutral so that the user ides stood out.  with this in mind, I went for a background colour of #041121
 
 ![Background colour](/static/images/background-colour.png)
 
@@ -258,7 +256,7 @@ I downloaded these from google fonts and imported them into the style sheet
 
 ## Imagery  
 
-The hero image used is a picture of my own.  I sought permissin from the parents of the chidren.
+The hero image used is a picture of my own.  I sought permission from the parents of the children.
 
 # Technologies
 
@@ -273,7 +271,7 @@ The hero image used is a picture of my own.  I sought permissin from the parents
 - Git
   - Git was used to commit and push code during development 
 - Font Awesome
-  - Various Font Awesoe icons were used throughout the site
+  - Various Font Awesome icons were used throughout the site
 - Balsamiq
   - Balsamiq wireframes were used to plan 
 
@@ -314,7 +312,7 @@ Add Idea Submit Button => ideas.html
 Log In => login.html
 Log Out => logout.html
 
-All navigatin links wored as expected
+All navigation links worked as expected
 
 ### Footer
 
@@ -325,7 +323,7 @@ All the font awesome icons in the footer opened to their respective websites, in
 Testing was taken out to ensure a user could sign up to the website.
 Steps:
 - Navigate to [Kidsbored](https://kids-bored.herokuapp.com/)
-- Navigate to Register page
+- Navigate to the Register page
 - Enter User Name and Password, email is optional
 - Click Sign Up
 
@@ -358,7 +356,6 @@ Actual outcome: User is redirected to the home page.  The Navbar changed to show
 
 Testing was taken out to ensure the user could create a new idea.
 
-
 Assuming user is already logged in
 Steps:
 - Navigate to Add Idea page
@@ -374,7 +371,7 @@ Steps:
 
   Expected Outcome if all fields are filled in correctly the user will be redirected to the Brows Ideas page where they can view their idea.
 
-  Expected outcome if the fields are not filled in correctly: A nocies to complete the field appears and the cursor goes to the field that needs to be competed.
+  Expected outcome if the fields are not filled in correctly: A nocies to complete the field appears and the cursor goes to the field that needs to be completed.
 
   Both of these outcomes happened correctly when tested.
 
@@ -384,11 +381,11 @@ Tested to ensure the user could edit their idea.
 
 Assuming the user is logged in
 Steps:
-- Navigate to the brows ideas page
+- Navigate to the browse ideas page
 - Click on the Activity Name
-- If the user is the Author of the activity they will see a delete button and an Edit button under the Activity Name
+- If the user is the Author of the activity, they will see a delete button and an Edit button under the Activity Name
 - Click the edit button
-- Update the filds you wish to update
+- Update the fields you wish to update
 - Click Submit
 
 Expected outcome:  The user will be redirected back to the browse ideas page which will show the new information.
@@ -401,23 +398,23 @@ Tested to ensure a user could delete their idea.
 
 Assuming the user is logged in
 Steps:
-- Navigate to the brows ideas page
+- Navigate to the browse ideas page
 - Click on the Activity Name
-- If the user is the Author of the activity they will see a delete button and an Edit button under the Activity Name
+- If the user is the Author of the activity, they will see a delete button and an Edit button under the Activity Name
 - Click the delete button
 - User is taken to a Delete confirmation page asking them if their wish to delete that idea showing the activity name.
 - Click Submit
 
-Expected outcome:  The user will be redirected back to the browse ideas page and the idea along with the comments will e deleted.
+Expected outcome:  The user will be redirected back to the browse ideas page and the idea along with the comments will be deleted.
 
 The outcome was as expected.
 
 ### Comment on a post
 
-First I check the comment section when the user is Logged out.
-As expected there is no option to enter a comment at all.  You can view other peoples comments but the box to write your own comment is hidden.
+First I checked the comment section when the user is Logged out.
+As expected there is no option to enter a comment at all.  You can view other people’s comments but the box to write your own comment is hidden.
 
-If they user is logged in:
+If the user is logged in:
 Steps
 - Navigate to Browse Ideas
 - Click on the activity name
@@ -429,33 +426,31 @@ Expected outcome: The comment will appear in the comment section to the left of 
 
 The outcome was as expected.
 
-
 ## Accessibility
 
-I used the [Wave Accessability](https://wave.webaim.org/)tool to check for aid accessability testing.
+I used the [Wave Accessibility](https://wave.webaim.org/)tool to check for aid accessibility testing.
 
 All pages came up with zero errors.
 
 They are showing Alerts that show redundant links, on the home page the site logo and the home link on the nav bar are the same.
 
-I have cosen to leave these links as they are because I think they make navigation around the site better.
+I have chosen to leave these links as they are because I think they make navigation around the site better.
 
 ## Validator Testing
 
-All pages were run through the [w3 HTML validator](https://validator.w3.org/).  Initially there were some errors, for example   there were some missing closing tags and a <p> tag that was used incorrectly inside a <span>.  
+All pages were run through the [w3 HTML validator](https://validator.w3.org/).  Initially, there were some errors, for example there were some missing closing tags and a <p> tag that was used incorrectly inside a <span>.  
 
 All issues were fixed and all pages ran through the checker with no errors.
 
-Due to the use of django language within the HTML files to complete this check I had to retrieve the html code from the open web page and right click to view the sourse code.  I could then copy and paste this into the validator.
+Due to the use of django language within the HTML files to complete this check I had to retrieve the html code from the open web page and right-click to view the source code.  I could then copy and paste this into the validator.
 
 ![w3 HTML Validator](/static/images/html-check.png)
 
 ## PP8 Validator
 
-All pages were run through the [PEP8 Validator  ](http://pep8online.com/).  There were some errors, for example lines to long and whitespace. All issues were corrected and all pages apart from the settings.py page have passed.  The settings file contains code that is not mine so I did not change it.
+All pages were run through the [PEP8 Validator  ](http://pep8online.com/).  There were some errors, for example, lines to long and whitespace. All issues were corrected and all pages apart from the settings.py page have passed.  The settings file contains code that is not mine so I did not change it.
 
 ![PEP8 Validator](/static/images/pep8.png)
-
 
 I didn't use any javascript in my project so there was nothing to test here.
 
@@ -475,12 +470,14 @@ As expected there were no responsiveness issues.
 
 # Bugs
 
-- I initally had a bug in the url's that was confusing the browse ideas page with the idea detail page and causing an error.  I solved this by post/ to the front of the url.
+- I initially had a bug in the URLs that was confusing the browse ideas page with the idea detail page and causing an error.  I solved this by post/ to the front of the url.
 >path('post/<slug:pk>/<str:activity_name>/', views.IdeaDetail.as_view(
 
 - I had a bug that stopped the images being uploaded from the front end.  They could be uploaded from admin.
-After alot of investigation I finally worked out that I need to add the encoding type to the form for it to recognise the imate
+After a lot of investigation, I finally worked out that I need to add the encoding type to the form for it to recognise the image.
 >enctype="multipart/form-data"
+
+- I have arranged the image size to all be the same size so that the cards are a uniform height.  I had ‘cover’ on this but this option was cutting the top of the picture off.  To solve this I have changed the css to ‘contain’.  This does not entirely fix the problem because it could look nicer on the page than it does. In a future development, I would like to add a function for the user to be able to pick the area of the picture they want to upload but I do not have time to implement this.
 
 # Deployment
 
@@ -502,9 +499,17 @@ To deploy my site to Heroku I followed the following steps
   - CLOUNDINARY_URL: (cloudinary api url)
 - Click the deploy tab
 - Scroll down to Connect to GitHub and sign in / authorize when prompted
-- In the search box, find the repositoy you want to deploy and click connect
+- In the search box, find the repository you want to deploy and click connect
 - Scroll down to Manual deploy and choose the main branch
-- Click deploy
+- Click Deploy
 
 The app should now be deployed
+
+# References
+I used a couple of other peoples projects to reference kanbans and ideas on what code I could google.
+- https://github.com/Gareth-McGirr/Portfolio-Project-4-SizzleAndSteak
+- https://github.com/MattBCoding/pp4-the-pantry
+
+- I also followed the Code Institute Blog walkthrough to start my project off 
+
 
