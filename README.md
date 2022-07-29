@@ -24,8 +24,7 @@ This project was developed using agile methodologies, delivering small features 
 
 My kanban board was made using github projects.  Each view can be clicked in to obtain furhter information.
 
-(pic of issues and pic of kanan board)
-
+![kanban](/static/images/kanban.png)
 
 The user stories were grouped into different Epics
 
@@ -103,30 +102,29 @@ Navigation Menu
 
 When the user is not logged in the navigation menu links to the Home page Browse Ideas page and the Sign in page
 
-(screen shot of nav bar)
+![Navbar before login](/static/images/navbar-before-login.png)
 
 Once the user has signed in the navigation menue changes to Home, Browse Ideas, Create Idea and Log out
 
-(sceen shot of nav bar)
+![Navbar](/static/images/navbar.png)
 
 The sign in, log in, log out pages were made using allauth.
 
 on smaller devices the menu options collapse into a button
 
-(screen shot of mobile nav bar)
+![Mobile Navbar](/static/images/mob-navbar.png)
 
 ### Home Page
 
-- 
-User Story - As a user I want the front page to be clear and self-explanatory so I know I am in the right place
+- User Story - As a user I want the front page to be clear and self-explanatory so I know I am in the right place
 
 The front page contains a hero image of some happy children eating icecream.  This will make it evident to the user that the website is for children.
 
-(screen shot of her image)
+![Hero Image](/static/images/hero-image-for-readme.png)
 
 Under this is information about the site and how to share and brows activity ideas.
 
-(screen shot of welcome text)
+![Welcome Text](/static/images/welcome-text.png)
 
 ### Footer
 
@@ -143,7 +141,6 @@ Anybody can use the webiste to brows ideas, they are shown in the brows ideas pa
 (screen shot of brows ideas page)
 
 ### Idea Detail 
-
 
 - User Story: As a user I want to be able to comment and like other peoples ideas
 
@@ -162,7 +159,9 @@ User Stories
 
 Users can sign in and out using various forms and confirmation pages. These forms were made using allauth and edited using bootstrap
 
-(screenshots of signin out pages)
+![Sign in page](/static/images/sign-in-page.png)
+
+![Sign out page](/static/images/sign-out.png)
 
 ### Create Idea
 
@@ -170,7 +169,7 @@ Users can sign in and out using various forms and confirmation pages. These form
 
 Once the user is logged in they can create their own idea using the create Idea form.  The forms were made using crispy forms which were used in conjunction with bootstrap.
 
-(screenshot of create idea form)
+![Create idea form](/static/images/create-idea-form.png)
 
 ### Edit and Delete Idea
 
@@ -185,7 +184,7 @@ The delete button will take the user to a confirmation page asking them to confi
 
 The delete and edit views use LoginRequiredMixin and UserPassesTestMixin to ensure that only the idea creator who is logged in can update or delete their idea.
 
-(screensht of edit and delete buttons and edit and delete pages)
+![edit and delete](/static/images/)
 
 ## Features left to impliment
 
@@ -433,6 +432,14 @@ The outcome was as expected.
 
 ## Accessibility
 
+I used the [Wave Accessability](https://wave.webaim.org/)tool to check for aid accessability testing.
+
+All pages came up with zero errors.
+
+They are showing Alerts that show redundant links, on the home page the site logo and the home link on the nav bar are the same.
+
+I have cosen to leave these links as they are because I think they make navigation around the site better.
+
 ## Validator Testing
 
 All pages were run through the [w3 HTML validator](https://validator.w3.org/).  Initially there were some errors, for example   there were some missing closing tags and a <p> tag that was used incorrectly inside a <span>.  
@@ -453,4 +460,51 @@ All pages were run through the [PEP8 Validator  ](http://pep8online.com/).  Ther
 I didn't use any javascript in my project so there was nothing to test here.
 
 ## Lighthouse Report
+
+The lighthouse report initially showed a low score on performance.  I compressed my hero image which fixed the problem.  
+
+![Lighthouse](/static/images/lighthouse.png)
+
+# Responsiveness
+
+I checked the website for responsiveness on all devices from 320px and up.  I checked on Chrome, Edge, Firefox and Opera browers.
+
+I did this by using developer tools and resising the website to down to 320px.
+
+As expected there were no responsiveness issues.
+
+# Bugs
+
+- I initally had a bug in the url's that was confusing the browse ideas page with the idea detail page and causing an error.  I solved this by post/ to the front of the url.
+>path('post/<slug:pk>/<str:activity_name>/', views.IdeaDetail.as_view(
+
+- I had a bug that stopped the images being uploaded from the front end.  They could be uploaded from admin.
+After alot of investigation I finally worked out that I need to add the encoding type to the form for it to recognise the imate
+>enctype="multipart/form-data"
+
+# Deployment
+
+To deploy my site to Heroku I followed the following steps
+
+- Navigate to heroku and create/log into account
+- Click the new button in the top right corner
+- Select create new app
+- Enter app name (kids-bored)
+- Select region and click create app (europe)
+- Click the resources tab and search for Heroku Postgres
+- Select hobby dev and continue
+- Go to the settings tab and then click reveal config vars
+- Add the following config vars:
+  - SECRET_KEY: (Your secret key)
+  - DATABASE_URL: (This should already exist with add on of postgres)
+  - EMAIL_HOST_USER: (email address)
+  - EMAIL_HOST_PASS: (email app password)
+  - CLOUNDINARY_URL: (cloudinary api url)
+- Click the deploy tab
+- Scroll down to Connect to GitHub and sign in / authorize when prompted
+- In the search box, find the repositoy you want to deploy and click connect
+- Scroll down to Manual deploy and choose the main branch
+- Click deploy
+
+The app should now be deployed
 
