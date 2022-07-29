@@ -20,26 +20,25 @@ a {
 }
 
 .button:hover {
-    background:#041121;
+    background: #041121;
     color: rgb(237, 233, 249);
     box-shadow: inset 0 0 0 4px rgb(237, 233, 249);
-    
 }
 
 /* Navbar */
 
 .bg-light {
-    background-color: #041121!important;
-    color: rgb(237, 233, 249)!important;
+    background-color: #041121 !important;
+    color: rgb(237, 233, 249) !important;
 }
 
-/* Navbar heading */
+/* Navbar */
 
 .navbar-brand {
     font-family: Ranchers, sans-serif;
     font-size: 3.25rem;
     margin-left: 1rem;
-    color: rgb(237, 233, 249)!important;
+    color: rgb(237, 233, 249) !important;
 }
 
 .navbar-toggler {
@@ -79,8 +78,8 @@ a {
 }
 
 .card {
-    color:#041121!important;
-    background-color:rgb(237, 233, 249)!important;
+    color: #041121 !important;
+    background-color: rgb(237, 233, 249) !important;
 }
 
 /* Home page */
@@ -91,7 +90,6 @@ hero-image {
     width: 100%;
     height: auto;
 }
-
 
 /* browse ideas page */
 
@@ -104,7 +102,7 @@ hero-image {
 /* card text */
 
 .card-text {
-    column-rule-color: #041121!important;
+    column-rule-color: #041121 !important;
 }
 
 /* Idea detail page*/
@@ -115,9 +113,10 @@ hero-image {
     object-fit: contain;
 }
 
-
-
-
+.idea-title,
+.idea-subtitle {
+    padding-left: 1rem;
+}
 /* like and comment amount*/
 
 .like-comment {
@@ -132,6 +131,7 @@ hero-image {
         width: 11%;
     }
 }
+
 /* Media Screen under 768px*/
 
 @media only screen and (max-width: 768px) {
@@ -160,9 +160,7 @@ hero-image {
 
 @media only screen and (max-width: 340px) {
     .navbar-brand {
-        
+
         font-size: 3rem;
     }
 }
-
-
