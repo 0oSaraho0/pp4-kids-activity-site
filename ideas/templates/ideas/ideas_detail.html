@@ -156,9 +156,10 @@
                 <!-- commenter username-->
                 <p class="card-text">Posting as: {{ user.username }}</p>
                 <!-- Comment form -->
+                <form method="post" style="margin-top: 1.3em;">
                     {{ comment_form | crispy }}
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                    <button type="submit" class="btn button btn-signup btn-lg">Submit</button>
                 </form>
                 {% endif %}
             </div>
