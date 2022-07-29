@@ -92,7 +92,11 @@ TEMPLATES = [
     },
 ]
 
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+
 WSGI_APPLICATION = 'kidsbored.wsgi.application'
+
+
 
 
 # Database
