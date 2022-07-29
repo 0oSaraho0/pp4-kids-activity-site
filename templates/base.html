@@ -61,6 +61,20 @@
         </div>
     </nav>
 
+
+    <!-- messages -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-4" id="msg">
+                {% for message in messages %}
+                {% include 'includes/toasts/toast.html' %}
+                <button type="button" class="btn-close button" aria-label="Close"></button>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
     <main class="flex-shrink-0 main-bg">
         {% block content %}
         <!-- Content Goes here -->
@@ -89,6 +103,14 @@
                 <i class="fab fa-youtube-square ms-3"></i></a>
         </p>
     </footer>
+    <script>
+        setTimeout(function(){
+            let messages = document.getElementById("msg");
+            let alert = new bootstrap.Alert(messages);
+            alert.close();
+        }, 3000);
+    </script>
+
 
 </body>
 

@@ -54,6 +54,13 @@ a {
     padding: 1rem;
 }
 
+/* toasts*/
+
+.toast {
+    background-color: rgb(237, 233, 249);
+    color: #041121;
+}
+
 /* Footer */
 
 /* social media links */
