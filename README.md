@@ -2,9 +2,59 @@
 
 Kidsbored is an activity sharing site for anyone that has to entertain kids for any length of time.  It provides users a clear and simple way to browse and share ideas on things to keep kids entertained.
 
+You can reach the live site [here](https://kids-bored.herokuapp.com/)
+
 ![Responsive Screens](/static/images/responsive-screens.png)
 
 # Table of contents   
+- [Kidsbored](#kidsbored)
+- [Table of contents](#table-of-contents)
+- [User-Experience-Design](#user-experience-design)
+  * [Site Goals](#site-goals)
+  * [Agile Planning](#agile-planning)
+  * [Scope](#scope)
+  * [Structure](#structure)
+    + [Kidsbored Features](#kidsbored-features)
+    + [Home Page](#home-page)
+    + [Footer](#footer)
+    + [Browse Ideas](#browse-ideas)
+    + [Idea Detail](#idea-detail)
+    + [Sign in, log in, log out](#sign-in--log-in--log-out)
+    + [Create Idea](#create-idea)
+    + [Edit and Delete Idea](#edit-and-delete-idea)
+  * [Features left to impliment](#features-left-to-impliment)
+- [Wireframes](#wireframes)
+- [Database](#database)
+- [Security](#security)
+- [Design](#design)
+  * [Colour Scheme](#colour-scheme)
+  * [Typogropny](#typogropny)
+  * [Imagery](#imagery)
+- [Technologies](#technologies)
+  * [External Python Modules](#external-python-modules)
+- [Testing](#testing)
+  * [Functional Testing](#functional-testing)
+    + [Navigation Links](#navigation-links)
+    + [Footer](#footer-1)
+    + [Sign Up Page](#sign-up-page)
+    + [Log out Page](#log-out-page)
+    + [Log in](#log-in)
+    + [Create Idea Page](#create-idea-page)
+    + [Edit Idea](#edit-idea)
+    + [Delete a post](#delete-a-post)
+    + [Comment on a post](#comment-on-a-post)
+    + [User test](#user-test)
+  * [Accessibility](#accessibility)
+  * [Validator Testing](#validator-testing)
+  * [PP8 Validator](#pp8-validator)
+  * [Lighthouse Report](#lighthouse-report)
+- [Responsiveness](#responsiveness)
+- [Bugs](#bugs)
+- [Deployment](#deployment)
+- [References](#references)
+- [Acknowledgements](#acknowledgements)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 
 
@@ -134,7 +184,7 @@ The Footer has been added to the bottom of the site and contains links to social
 
 Anybody can use the website to browse ideas, they are shown in the browse ideas page with the activity title and pictures in rows of 3.  The activity Title is a link to open up each activity with further information about it.
 
-(screen shot of brows ideas page)
+![Brows Ideas Page](/static/images/browse-ideas.png)
 
 ### Idea Detail 
 
@@ -142,9 +192,11 @@ Anybody can use the website to browse ideas, they are shown in the browse ideas 
 
 Each user story opens up to a full page which contains the image, a link to the activity website if applicable, the age range the activity is aimed at, activity cost per person, the location of the activity and a review.
 
+![Detail Page](/static/images/detail-page.png)
+
 Logged-on users can also comment on and like the ideas.
 
-( screen shot of idea detail page)
+![comments](/static/images/comments.png)
 
 ### Sign in, log in, log out
 
@@ -182,7 +234,7 @@ The delete button will take the user to a confirmation page asking them to confi
 
 The delete and edit views use LoginRequiredMixin and UserPassesTestMixin to ensure that only the idea creator who is logged in can update or delete their idea.
 
-![edit and delete](/static/images/)
+![edit and delete](/static/images/edit-and-delete.png)
 
 ## Features left to impliment
 
@@ -426,6 +478,10 @@ Expected outcome: The comment will appear in the comment section to the left of 
 
 The outcome was as expected.
 
+### User test
+
+I asked my brother to use the site, upload an idea and give me feedback.  He found the site easy to use but found a poroblem, when he uploaded his picture it cut his daughters head off.  She was most upset about this.  This highlighted a bug which I have written about in the bug section.
+
 ## Accessibility
 
 I used the [Wave Accessibility](https://wave.webaim.org/)tool to check for aid accessibility testing.
@@ -508,10 +564,23 @@ To deploy my site to Heroku I followed the following steps
 The app should now be deployed
 
 # References
-I used a couple of other peoples projects to reference kanbans and ideas on what code I could google.
-- https://github.com/Gareth-McGirr/Portfolio-Project-4-SizzleAndSteak
-- https://github.com/MattBCoding/pp4-the-pantry
+- I used a couple of other peoples projects to reference kanbans and ideas on what code I could google.
+  - https://github.com/Gareth-McGirr/Portfolio-Project-4-SizzleAndSteak
+  - https://github.com/MattBCoding/pp4-the-pantry
+- I also followed the Code Institute Blog walkthrough to start my project off.
+- I used the django documentation 
+- I used the summernote documentation
+- I used the bootstrap documentation
 
-- I also followed the Code Institute Blog walkthrough to start my project off 
+# Acknowledgements
+
+I want to thank:
+- My mentor Daisy McGirr for all her guidance
+- Chris, Kat, Danny and Katy for letting me use a photo of their children
+- My brother for testing my site for me.
+- The wonderful slack community
+- My husband for putting up with my stress
+
+
 
 
