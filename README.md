@@ -477,6 +477,8 @@ As expected there were no responsiveness issues.
 After a lot of investigation, I finally worked out that I need to add the encoding type to the form for it to recognise the image.
 >enctype="multipart/form-data"
 
+- There was a bug that stopped the nav bar working when it collapsed down to a button on smaller screens.  The issue was the bootstap link was slightly wrong.  Once corrected the bug was solved.
+
 - I have arranged the image size to all be the same size so that the cards are a uniform height.  I had ‘cover’ on this but this option was cutting the top of the picture off.  To solve this I have changed the css to ‘contain’.  This does not entirely fix the problem because it could look nicer on the page than it does. In a future development, I would like to add a function for the user to be able to pick the area of the picture they want to upload but I do not have time to implement this.
 
 # Deployment

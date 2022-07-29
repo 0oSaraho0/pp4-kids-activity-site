@@ -1,5 +1,6 @@
 from .models import Comment, Idea
 from django import forms
+from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
 
 
 class CommentForm(forms.ModelForm):
@@ -22,3 +23,6 @@ class IdeaForm(forms.ModelForm):
             'activity_website',
             'review',
         )
+        widgets = {
+            'review': SummernoteWidget()
+        }
