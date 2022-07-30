@@ -62,7 +62,7 @@ You can reach the live site [here](https://kids-bored.herokuapp.com/)
 
 ## Site Goals
 
-The site is aimed at anyone that has to entertain children.  Without signing in the user can browse ideas on what they can do.  They will also be able to log on and share ideas of their own and comment on other people’s ideas.  They will also be able to edit and delete their ideas.
+The site is aimed at anyone that has to entertain children.  Without signing in the user can browse ideas on things they can do.  They will also be able to log on and share ideas of their own and comment on other people’s ideas.  They will also be able to edit and delete their ideas.
 
 ## Agile Planning
 
@@ -142,7 +142,7 @@ Epic 6 Tasks
 
 Navbar
 
-user story - - As a user I want to be able to navigate easily around the site easily from any devise
+user story - As a user I want to be able to navigate easily around the site easily from any devise
 
 Navigation Menu
 
@@ -151,6 +151,8 @@ When the user is not logged in the navigation menu links to the Home page Browse
 ![Navbar before login](/static/images/navbar-before-login.png)
 
 Once the user has signed in the navigation menu changes to Home, Browse Ideas, Create Idea and Log out
+
+The user will also receive a toast message saying they have successfully signed in.
 
 ![Navbar](/static/images/navbar.png)
 
@@ -174,9 +176,11 @@ Under this is information about the site and how to share and browse activity id
 
 ### Footer
 
-- User Story: As site owner, I want to share social media links.
+- User Story: As site owner, I want to share social media links and contact details
 
 The Footer has been added to the bottom of the site and contains links to social media sites so that users can also share their ideas and promote the site via social media.
+
+![Footer](/static/images/kidsbored-footer.png)
 
 ### Browse Ideas
 
@@ -188,7 +192,7 @@ Anybody can use the website to browse ideas, they are shown in the browse ideas 
 
 ### Idea Detail 
 
-- User Story: As a user, I want to be able to comment and like otherpeople’ss ideas
+- User Story: As a user, I want to be able to comment and like otherpeople’s ideas
 
 Each user story opens up to a full page which contains the image, a link to the activity website if applicable, the age range the activity is aimed at, activity cost per person, the location of the activity and a review.
 
@@ -204,18 +208,27 @@ User Stories
 - As a new user, I want to be able to sign up easily and intuitively
 - As a returning user, I want to be able to log in easily.
 - As a user, I want to be able to log out of the site safely and easily.
+- As a developer, I want to ensure the forms are all the same style and look good on all devices
 
 Users can sign in and out using various forms and confirmation pages. These forms were made using allauth and edited using bootstrap
 
 ![Sign in page](/static/images/sign-in-page.png)
 
+![Sign up Page](/static/images/sign-up.png)
+
 ![Sign out page](/static/images/sign-out.png)
+
+As you can see all of the sign in out pages have a similar design to them, with the dark writing on the white background.  
+
+I went with a light background and dark writing for the log in/out pages and the reverse for the  Create, Edit and Delete pages, but kept the styling the same.  This connects the forms throughout the website but differentiates between the two areas
 
 ### Create Idea
 
 - User Story: As a user, I want to be able to input my own ideas of things to do into the site in an easy and intuitive way so that I can easily share ideas with others
 
 Once the user is logged in they can create their own idea using the create Idea form.  The forms were made using crispy forms which were used in conjunction with bootstrap.
+
+The picture below is from a mobile view.  You can see that the forms colapse down so they can easily be used on a mobile device.
 
 ![Create idea form](/static/images/create-idea-form.png)
 
@@ -230,7 +243,11 @@ The creator of an idea will be able to view edit and delete icons on their idea 
 
 They will get a toast message to advise them that their creation/edit has been successful
 
+![Edit Idea](/static/images/edit-idea.png)
+
 The delete button will take the user to a confirmation page asking them to confirm they wish to delete that idea.  Once an idea is deleted all comments will be deleted with it.
+
+![Delete Idea](/static/images/delete-idea.png)
 
 The delete and edit views use LoginRequiredMixin and UserPassesTestMixin to ensure that only the idea creator who is logged in can update or delete their idea.
 
@@ -243,6 +260,10 @@ The delete and edit views use LoginRequiredMixin and UserPassesTestMixin to ensu
 - Once the profile page was in place I could add an option to show the creator’s picture as well as their name on their ideas.
 
 - I had also planned to add search options on the brows ideas page allowing users to search by Activity name, location, price or age range.
+
+- In a future development I would like to add CRUD functionality to the comments section and to enable users to comment on comments so more social interaction could be had.
+
+- The site could also be taken further with a social development where users could arrange meet ups and get together in person.
 
 # Wireframes
 
@@ -310,6 +331,8 @@ I downloaded these from google fonts and imported them into the style sheet
 
 The hero image used is a picture of my own.  I sought permission from the parents of the children.
 
+The placeholder image was taken from pexels and is royalty free.  I chose a generic picture of children running through a field.  It is bright and colourful.
+
 # Technologies
 
 - HTML
@@ -321,11 +344,15 @@ The hero image used is a picture of my own.  I sought permission from the parent
 - Github
   - Source code was hosted in Github
 - Git
-  - Git was used to commit and push code during development 
+  - Git was used to write, commit and push code during development 
 - Font Awesome
   - Various Font Awesome icons were used throughout the site
 - Balsamiq
   - Balsamiq wireframes were used to plan 
+- javascript
+  - I used a very small amount of javascript to make the toast messages disappear
+- [GitHub Wiki TOC generator](http://ecotrust-canada.github.io/markdown-toc/)
+  - I used this to enter my table of contents.
 
 ## External Python Modules
 - cloudinary==1.29.0 - cloudinary was used to store imagery for the site and to upload user images
@@ -401,8 +428,8 @@ Steps:
 - Enter User Name and Password
 - Click Sign in
 
-Expected outcome: User is redirected to the home page.  The Navbar changes to show the create idea option and log out options.
-Actual outcome: User is redirected to the home page.  The Navbar changed to show the create Idea potion and log out option.
+Expected outcome: User is redirected to the home page.  The Navbar changes to show the create idea option and log out options. A message appears to say they have successfully logged in.
+Actual outcome: User is redirected to the home page.  The Navbar changed to show the create Idea potion and log out option. A message appears to say they have successfully logged in.
 
 ### Create Idea Page
 
@@ -421,7 +448,7 @@ Steps:
   - Review (optional)
 - Click Submit
 
-  Expected Outcome if all fields are filled in correctly the user will be redirected to the Brows Ideas page where they can view their idea.
+  Expected Outcome if all fields are filled in correctly the user will be redirected to the Brows Ideas page where they can view their idea.  A message appears to say they have successfully created their idea.
 
   Expected outcome if the fields are not filled in correctly: A nocies to complete the field appears and the cursor goes to the field that needs to be completed.
 
@@ -440,7 +467,7 @@ Steps:
 - Update the fields you wish to update
 - Click Submit
 
-Expected outcome:  The user will be redirected back to the browse ideas page which will show the new information.
+Expected outcome:  The user will be redirected back to the browse ideas page which will show the new information, and a message appears to say they have succesfully updated their idea.
 
 The outcome was as expected.
 
@@ -480,7 +507,7 @@ The outcome was as expected.
 
 ### User test
 
-I asked my brother to use the site, upload an idea and give me feedback.  He found the site easy to use but found a poroblem, when he uploaded his picture it cut his daughters head off.  She was most upset about this.  This highlighted a bug which I have written about in the bug section.
+I asked my brother to use the site, upload an idea and give me feedback.  He found the site easy to use but found a problem, when he uploaded his picture it cut his daughters head off.  She was most upset about this.  This highlighted a bug which I have written about in the bug section.
 
 ## Accessibility
 
@@ -526,16 +553,16 @@ As expected there were no responsiveness issues.
 
 # Bugs
 
-- I initially had a bug in the URLs that was confusing the browse ideas page with the idea detail page and causing an error.  I solved this by post/ to the front of the url.
+- I initially had a bug in the URLs that was confusing the browse ideas page with the idea detail page and causing an error.  I solved this by adding post/ to the front of the url.
 >path('post/<slug:pk>/<str:activity_name>/', views.IdeaDetail.as_view(
 
 - I had a bug that stopped the images being uploaded from the front end.  They could be uploaded from admin.
-After a lot of investigation, I finally worked out that I need to add the encoding type to the form for it to recognise the image.
+After a lot of investigation, I finally worked out that I needed to add the encoding type to the form for it to recognise the image.
 >enctype="multipart/form-data"
 
 - There was a bug that stopped the nav bar working when it collapsed down to a button on smaller screens.  The issue was the bootstap link was slightly wrong.  Once corrected the bug was solved.
 
-- I have arranged the image size to all be the same size so that the cards are a uniform height.  I had ‘cover’ on this but this option was cutting the top of the picture off.  To solve this I have changed the css to ‘contain’.  This does not entirely fix the problem because it could look nicer on the page than it does. In a future development, I would like to add a function for the user to be able to pick the area of the picture they want to upload but I do not have time to implement this.
+- I had arranged the image size to all be the same size so that the cards are a uniform height.  I had ‘cover’ on this but this option was cutting the top of the picture off.  To solve this I have changed the css to ‘contain’.  This does not entirely fix the problem because it would be nice to have the pictuers all the same size. In a future development, I would like to add a function for the user to be able to pick the area of the picture they want to upload.
 
 # Deployment
 
